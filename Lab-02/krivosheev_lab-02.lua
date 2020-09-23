@@ -51,11 +51,11 @@ function uint.DivideButton:on_clicked(...)
 	b=tonumber(uint.SecondNumber.text)
 if type(tonumber(uint.FirstNumber.text))=='number' and type(tonumber(uint.SecondNumber.text))=='number'
 	then
-if tonumber(uint.SecondNumber.text)=0
+if tonumber(uint.SecondNumber.text)==0
 then
-	uint.Result.label=a/b
+	uint.Result.label='error'
 else
-uint.Result.label='error'
+uint.Result.label=a/b
 end
 else
 	uint.Result.label='error'
