@@ -162,7 +162,7 @@ function uint.MemoryPlusButton:on_clicked(...)
 	a=tonumber(uint.Result.label)
 if type(tonumber(uint.Result.label))=='number'
 	then
-uint.MemoryBox.label=a+memory
+uint.Result.label=a+memory
 else
 
 	end
@@ -172,7 +172,7 @@ function uint.MemoryMinusButton:on_clicked(...)
 	a=tonumber(uint.Result.label)
 if type(tonumber(uint.Result.label))=='number'
 	then
-uint.MemoryBox.label=a-memory
+uint.Result.label=a-memory
 else
 
 	end
