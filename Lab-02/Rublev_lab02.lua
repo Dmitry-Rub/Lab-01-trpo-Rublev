@@ -3,11 +3,11 @@ lgi = require 'lgi'
 gtk = lgi.Gtk
 gtk.init()
 build=gtk.Builder()
-build:add_from_file('Krivosheev_lab-02.glade')
+build:add_from_file('Rublev_lab02.glade')
 
 uint=build.objects
 
-uint.win.title = 'krivosheev_lab-02'
+uint.win.title = 'Rublev_lab02'
 uint.win.on_destroy = gtk.main_quit
 uint.win:show_all()
 
@@ -162,7 +162,7 @@ function uint.MemoryPlusButton:on_clicked(...)
 	a=tonumber(uint.Result.label)
 if type(tonumber(uint.Result.label))=='number'
 	then
-uint.MemoryBox.label=a+memory
+uint.Result.label=a+memory
 else
 
 	end
@@ -172,7 +172,7 @@ function uint.MemoryMinusButton:on_clicked(...)
 	a=tonumber(uint.Result.label)
 if type(tonumber(uint.Result.label))=='number'
 	then
-uint.MemoryBox.label=a-memory
+uint.Result.label=a-memory
 else
 
 	end
