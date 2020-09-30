@@ -210,7 +210,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Krivosheev from 473 preset</property>
+            <property name="label" translatable="yes">Rublev from 473 present</property>
           </object>
           <packing>
             <property name="expand">False</property>
