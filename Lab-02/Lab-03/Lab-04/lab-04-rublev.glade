@@ -2,6 +2,12 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkListStore" id="FruitList">
+    <columns>
+      <!-- column-name fruit -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
   <object class="GtkListStore" id="List">
     <columns>
       <!-- column-name gchararray1 -->
@@ -89,6 +95,19 @@
             <property name="fill">True</property>
             <property name="padding">9</property>
             <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="cbfruits">
+            <property name="name">cb_fruit</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="model">FruitList</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
           </packing>
         </child>
         <child>

@@ -2,6 +2,7 @@ lgi = require 'lgi'
 
 gtk=lgi.Gtk
 pixbuf = lgi.GdkPixbuf.Pixbuf
+pixbuffruit = lgi.GdkPixbuf.Pixbuf
 
 gtk.init()
 
@@ -10,11 +11,27 @@ bld:add_from_file('lab-04-rublev.glade')
 
 uint = bld.objects
 
+fruit = '';
+uint.cbfruits.append_column("apple")
+uint.cbfruits.append_column("orange")
+uint.cbfruits.append_column("cherry")
+uint.cbfruits.append_column("blueberry")
+uint.cbfruits.append_column("grapes")
+uint.cbfruits.append_column("lemon")
+uint.cbfruits.append_column("pear")
+uint.cbfruits.append_column("raspberry")
+uint.cbfruits.append_column("strawberry")
+
+
+function uint.cbfruits:on_clicked(...)
+fruit = cbfruits.getItems()
+end
+
 function uint.BAdd:on_clicked(...)
 	name = uint.TName.text
 	value = tonumber(uint.TValue.text)
 	
-	px=pixbuf.new__from_file('img-blueberry.png')
+	px=pixbuf.new_from_file(fruit+'.png')
 
 	i=uint.List:append()
 	uint.List[i]={[1]=name, [2]=value, [3]=px}
@@ -25,7 +42,7 @@ rdr_pix = gtk.CellRendererPixbuf {}
 
 c1 = gtk.TreeViewColumn { title = 'Name', {rdr_txt, { text=1}}	}
 c2 = gtk.TreeViewColumn { title = 'Value', {rdr_txt, { text=2}}	}
-c3 = gtk.TreeViewColumn { title = 'Image', {rdr_txt, { text=3}}	}
+c3 = gtk.TreeViewColumn { title = 'Image', {rdr_pix, { pixbuf=3}}	}
 
 uint.table:append_column(c1)
 uint.table:append_column(c2)
@@ -33,4 +50,6 @@ uint.table:append_column(c3)
 
 uint.wnd.title = 'lab-04-rublev'
 uint.wnd.on_destroy = gtk.main_quit
+uint.wnd:show_all()
+gtk.main()
 
